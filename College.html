@@ -1,63 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <title>Nast College ,Dhangadhi</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nast College, Dhangadhi</title>
     <link rel="stylesheet" href="css/college.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-
     <script>
-
-        //dynamic.
-        const title =' NAST portal';
-         function showTitle(){
-            alert( you in ' + alert');
+        // Dynamic Title Function
+        const title = 'NAST Portal';
+        function showTitle() {
+            alert('You are in ' + title);
         }
     </script>
-    </head>
-    <body>
- <h2>Introduction </h2>
-<p class="parastyle">
-    Among the affiliated educational institutions of Pokhara University, 
-    it is the first educational institution to receive the Quality Assurance and Accreditation (QAA) 
-    certificate from the University Grants Commission (UGC).
-</p>
-<div style="text-align: center;">
-<img height="300"src="https://nast.edu.np/wp-content/uploads/2024/07/1708434571036-1-scaled.jpg" alt=""/>
-</div>
-</body>
-<h2>QAA Certificate and 24 years of Experiences</h2>
-<p class="parastyle">
-    National Academy of Science and Technology,
-     popularly known as NAST, is an QAA Certified,
-      english medium co- educational Institution. 
-      Patroned and promoted by a team of academicians, 
-      researchers and professionals renowned both at home and abroad, 
-      NAST has proved itself as a centre of learning for academic excellence in the field of science-technology and management.
-</p>
-<h2>QAA Certificate and 24 years of Experiences</h2>
-<p>
-    National Academy of Science and Technology,
-     popularly known as NAST, is an QAA Certified,
-      english medium co- educational Institution. 
-      Patroned and promoted by a team of academicians, 
-      researchers and professionals renowned both at home and abroad, 
-      NAST has proved itself as a centre of learning for academic excellence in the field of science-technology and management.
-</p>
-<h2>Contact us</h2>
-<form action="#" class="px-4">
-    
-    <div class="mb-3">
-        <label for="fullname">Full Name</label><br>
-        <input type="Text"  class="form-control" ><br>
+</head>
+<body>
+    <h2>Introduction</h2>
+    <p class="parastyle">
+        Among the affiliated educational institutions of Pokhara University, 
+        it is the first educational institution to receive the Quality Assurance and Accreditation (QAA) 
+        certificate from the University Grants Commission (UGC).
+    </p>
+    <div style="text-align: center;">
+        <img height="300" src="https://nast.edu.np/wp-content/uploads/2024/07/1708434571036-1-scaled.jpg" alt="NAST College"/>
     </div>
-   <div class="mb-3">
-    <label for="Email">Email Address</label><br>
-    <input type="text" class="form-control"><br>
-   </divd class="mb-3">
-   <label class="form-level">Message</label><br>
-    <textarea rows="5" class="form-control"></textarea>
-    <button class="btn btn-sucess "type="Submit" onclick="showTitle">Send</button>
-     </form>
 
- </body>
+    <h2>QAA Certificate and 24 Years of Experience</h2>
+    <p class="parastyle">
+        National Academy of Science and Technology,
+        popularly known as NAST, is a QAA Certified,
+        English-medium co-educational institution. 
+        Patroned and promoted by a team of academicians, 
+        researchers, and professionals renowned both at home and abroad, 
+        NAST has proved itself as a center of learning for academic excellence in the fields of science, technology, and management.
+    </p>
+
+    <h2>Contact Us</h2>
+    <form action="#" class="px-4">
+        <div class="mb-3">
+            <label for="fullname">Full Name</label><br>
+            <input type="text" id="fullname" class="form-control"><br>
+        </div>
+        <div class="mb-3">
+            <label for="email">Email Address</label><br>
+            <input type="email" id="email" class="form-control"><br>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label><br>
+            <textarea rows="5" id="message" class="form-control"></textarea><br>
+        </div>
+        <button class="btn btn-success" type="submit" onclick="showTitle()">Send</button>
+    </form>
+</body>
 </html>
