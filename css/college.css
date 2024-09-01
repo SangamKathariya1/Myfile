@@ -1,0 +1,12 @@
+/* tag,id,class*/
+.parastyle{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: blueviolet;
+    }
+    h2{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    img{
+        box-shadow: 10px 10px 20px grey;
+    }
