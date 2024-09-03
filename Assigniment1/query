@@ -1,0 +1,24 @@
+Get all books which are published in last 30 years
+ANSWER:
+select Title,Author,Publication year  from Books where publicationyear >=year(curent)-30;
+
+Get total price of books written by parijat
+ ANSWER:
+ select sum(b.price) AS Total_price
+ from Books b
+ JOIN Author a ON a.Id = b.AuthorId
+WHERE a.Name = 'Parijat';
+
+Get all publishers in descending order with number of books published so far
+Answer:
+select p.Name AS Publisher_Name,COUNT(b.Id) AS Books_Published
+FROM Book b
+JOIN Publisher p ON p.Id = b.PublisherId
+GROUP BY p.Name
+ORDER BY Books_Published DESC;
+
+Get all authors with comma separated list of books they have written
+Answer:
+SELECT Author, GROUP_CONCAT(Title ORDER BY Title ASC SEPARATOR ', ') AS Books
+FROM Books
+GROUP BY Author;
