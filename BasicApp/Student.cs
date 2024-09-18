@@ -5,7 +5,7 @@ class Student
     public DateTime dateofBirth;
     char Gender;
 
-    void DetilPrint()
+    void PrintDetails()
     {
         Console.WriteLine(name);
         Console.WriteLine(rollNumber);
