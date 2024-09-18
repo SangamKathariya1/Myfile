@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Tranning\\MyFiles\\BasicApp\\BasicApp.csproj": {}
+    "E:\\Tranning\\MyFiles\\BAsicApp\\BasicApp.csproj": {}
   },
   "projects": {
-    "E:\\Tranning\\MyFiles\\BasicApp\\BasicApp.csproj": {
+    "E:\\Tranning\\MyFiles\\BAsicApp\\BasicApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tranning\\MyFiles\\BasicApp\\BasicApp.csproj",
+        "projectUniqueName": "E:\\Tranning\\MyFiles\\BAsicApp\\BasicApp.csproj",
         "projectName": "BasicApp",
-        "projectPath": "E:\\Tranning\\MyFiles\\BasicApp\\BasicApp.csproj",
+        "projectPath": "E:\\Tranning\\MyFiles\\BAsicApp\\BasicApp.csproj",
         "packagesPath": "C:\\Users\\katha\\.nuget\\packages\\",
-        "outputPath": "E:\\Tranning\\MyFiles\\BasicApp\\obj\\",
+        "outputPath": "E:\\Tranning\\MyFiles\\BAsicApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\katha\\AppData\\Roaming\\NuGet\\NuGet.Config"

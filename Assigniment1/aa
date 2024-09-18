@@ -1,0 +1,11 @@
+// This line prints "Hello, World" 
+Console.WriteLine("Hello, World");
+
+
+// using system 
+using system;
+class hello{
+    static void main()
+    //This line prints "Hello, World" 
+Console.WriteLine("Hello, World");
+}
