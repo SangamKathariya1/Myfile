@@ -17,7 +17,7 @@ decimal molceuleWeight = 34.34353666m;
 
 //Text 
 String collegeName="Nast";
-char gender ='M';
+char Gender ='M';
 
 //Boolean
 bool isAbscentToday = true;
