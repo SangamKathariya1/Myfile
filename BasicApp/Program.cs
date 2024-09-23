@@ -40,3 +40,13 @@ student3.dateofBirth=new DateTime(1999,05,02);
 student3.resume = "BBA";
 student3.Gender = 'M';
 student3.Info();
+
+Method m= new();
+m.SayHello();
+m.SayHello("Hi!!");
+var av =m.GetAverage(23,34,45,44,456,677);
+var (Sum,Average)=m.GetResult(23,34,45,555);
+
+Generics g= new();
+g.Print<decimal>(234.3445m);
+g.Print<string>("Hello");
