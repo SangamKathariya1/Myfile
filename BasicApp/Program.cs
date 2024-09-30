@@ -13,40 +13,43 @@
 // student1.dateofBirth = new DateTime(2001,4,14);
 // student1.PrintDetails();
 
-using System.Data.SqlTypes;
+// using System.Data.SqlTypes;
 
-Console.WriteLine($"Name \t Rollnumber \t Date Of Birth  \t Resume \t Gender");
-Student student = new();
- student.name = "Sangam";
-student.rollNumber = 1;
-student.dateofBirth=new DateTime(1998,05,22);
-student.resume = "BCA";
-student.Gender = 'M';
-student.Info();
+// Console.WriteLine($"Name \t Rollnumber \t Date Of Birth  \t Resume \t Gender");
+// Student student = new();
+//  student.name = "Sangam";
+// student.rollNumber = 1;
+// student.dateofBirth=new DateTime(1998,05,22);
+// student.resume = "BCA";
+// student.Gender = 'M';
+// student.Info();
 
-Student student1 = new();
- student1.name = "Smith";
-student1.rollNumber = 2;
-student1.dateofBirth=new DateTime(2000,11,15);
-student1.resume = "BE";
-student1.Gender = 'M';
-student1.Info();
+// Student student1 = new();
+//  student1.name = "Smith";
+// student1.rollNumber = 2;
+// student1.dateofBirth=new DateTime(2000,11,15);
+// student1.resume = "BE";
+// student1.Gender = 'M';
+// student1.Info();
 
 
-Student student3 = new();
- student3.name = "Virat";
-student3.rollNumber = 3;
-student3.dateofBirth=new DateTime(1999,05,02);
-student3.resume = "BBA";
-student3.Gender = 'M';
-student3.Info();
+// Student student3 = new();
+//  student3.name = "Virat";
+// student3.rollNumber = 3;
+// student3.dateofBirth=new DateTime(1999,05,02);
+// student3.resume = "BBA";
+// student3.Gender = 'M';
+// student3.Info();
 
-Method m= new();
-m.SayHello();
-m.SayHello("Hi!!");
-var av =m.GetAverage(23,34,45,44,456,677);
-var (Sum,Average)=m.GetResult(23,34,45,555);
+// Method m= new();
+// m.SayHello();
+// m.SayHello("Hi!!");
+// var av =m.GetAverage(23,34,45,44,456,677);
+// var (Sum,Average)=m.GetResult(23,34,45,555);
 
-Generics g= new();
-g.Print<decimal>(234.3445m);
-g.Print<string>("Hello");
+// Generics g= new();
+// g.Print<decimal>(234.3445m);
+// g.Print<string>("Hello");
+
+FileAndFolderHandler fd= new();
+fd.CreateFolder("ABC");

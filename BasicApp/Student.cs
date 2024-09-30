@@ -7,6 +7,7 @@ class Student
 
     public  char Gender;
 
+
     //  public void PrintDetails()
     // {   
     //     // var output = name +","+rollNumber + "," + dateofBirth.ToLongDateString;
