@@ -1,66 +1,56 @@
-//LINQ -Language  integrated query
-//Used for querying collections
+
+// LINQ - Language Integrated Query
+// Used for querying collections
+
+using CollegeManagement;
 
 public class LINQ
 {
-    int[]marks =[23,24,45,12,70,66,50,80];
-
-    List<Student> students = new List<Student>
-[
-    new Student("Ramesh", 12, new DateTime(2000, 2, 3), 'M'),
-    new Student("Suresh", 13, new DateTime(2006, 5, 12), 'M'),
-    new Student("Mukesh", 14, new DateTime(2002, 7, 19), 'M'),
-    new Student("Mahesh", 15, new DateTime(2010, 8, 21), 'M'), // Added comma
-    new Student("Ganesh", 16, new DateTime(2004, 9, 15), 'M')  // Added comma
-];
+    int[] marks = [23, 45, 67, 12, 90, 24, 46, 58, 89, 24, 88, 55];
+    List<student> students = [
+        new student("Ramesh", 12, new DateTime(2000, 12, 12), 'M'),
+        new student("Ram", 22, new DateTime(1990, 7, 10), 'F'),
+        new student("Krishna", 32, new DateTime(2010, 1, 12), 'M'),
+        new student("Bishnu", 52, new DateTime(2008, 2, 12), 'F'),
+        new student("Shiba", 66, new DateTime(2001, 11, 5), 'M')
+    ];
 
     public void Test()
     {
-        //Get  list of pass marks only(40  or more)
-        //imperative way
+        // Get list of pass marks only (40 or more)
 
-        List<int>passMarks =[];
-        foreach(var mark in marks)
+        // Imperative way
+        List<int> passMarks = [];
+        foreach (var mark in marks)
         {
-            if(mark >=40)
+            if (mark >= 40)
             {
                 passMarks.Add(mark);
             }
         }
 
-        //Declarative way
-        var pMarks = marks.Where(mark=>mark>=40);
+        // Declarative way
+        var pMarks = marks.Where(mark => mark >= 40);
 
-        //Get sum of passmarks
-        var totalMarks = marks.Where(mark=>mark>=40).Sum();
+        // Get sum of passmarks
+        var totalMarks = marks.Where(mark => mark >= 40).Sum();
 
-        //Get all marks out of 10
-        var marks10 = marks.Select(mark=>(double)mark/10);
+        // Get all marks out of 10
+        var marks10 = marks.Select(mark => (double)mark / 10);
 
+        // Get all passmarks out of 10
+        // Method syntax
+        var pMarks10 = marks.Where(mark => mark >= 40).Select(mark => (double)mark / 10);
+        
+        // Expression syntax
+        pMarks10 = from mark in marks
+                   where mark >= 40
+                   select (double)mark / 10;
 
+        // Get all male students
+        var maleStudents = students.Where(student => student.gender == 'M');
 
-
-        //get all passmarks out of 10
-
-      var pMarks10 = marks.Where(mark=>mark>=40).Select(marks=>(double) marks /10);
-
-
-      //LINQ syntax Method syntax and Expression syntax
-
-      pMarks10 = from mark in marks where mark>=40 select (double)mark/10;
-
-
-
-
-      //get all male student
-
-      var maleStudents= students.Where(s=>s.Gender=='M');
-
-
-      //Get student names who are adults  now
-
-      var sNames= students.Where(s=>(DateTime.Now - s.dateofBirth).TotalDays/365>=18).Select(s=>s.name);
-    } 
-
-
+        // Get student names who are adults now
+        var sNames = students.Where(s => (DateTime.Now - s.dateOfBirth).TotalDays / 365 >= 18).Select(s => s.name);
+    }
 }

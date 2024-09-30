@@ -1,55 +1,63 @@
-﻿// OOP: Object oriented programming with c#
-//Static vs Dynamic
-// OOP vs Functional vs Procedural
-//C#:Multi paradigm language
-//imperative vs Declarative
+﻿﻿// OOP: Object Oriented Programming with C#
+// C#: Multi Paradigm Language
+// Static vs Dynamic
+// Procedural vs OOP vs Functional
+// Imperative vs Declarative
 
-// var x= 12334 ;
-// Console.WriteLine("personAge");
-
-// var student1 =new Student();
-// student1.name="Sangam Kathariya";
-// student1.rollNumber= 12;
-// student1.dateofBirth = new DateTime(2001,4,14);
+// var student1 = new Student();
+// student1.name = "Bhawana Rawal";
+// student1.rollNumber = 34;
+// student1.dateOfBirth = new DateTime(2000, 12, 12);
 // student1.PrintDetails();
 
-// using System.Data.SqlTypes;
+// var student2 = new Student();
+// student2.name = "James Bond";
+// student2.rollNumber = 67;
+// student2.dateOfBirth = new DateTime(1990, 1, 11);
+// student2.PrintDetails();
 
-// Console.WriteLine($"Name \t Rollnumber \t Date Of Birth  \t Resume \t Gender");
-// Student student = new();
-//  student.name = "Sangam";
-// student.rollNumber = 1;
-// student.dateofBirth=new DateTime(1998,05,22);
-// student.resume = "BCA";
-// student.Gender = 'M';
-// student.Info();
+// Create two more student objects and print student details in console in following format
+// Name     Roll Number  DOB    Gender
+// Bhawana Rawal   0       Tuesday, December 12, 2000   F
+// James Bond      0       Thursday, January 11, 1990   M
 
-// Student student1 = new();
-//  student1.name = "Smith";
-// student1.rollNumber = 2;
-// student1.dateofBirth=new DateTime(2000,11,15);
-// student1.resume = "BE";
-// student1.Gender = 'M';
-// student1.Info();
+// using CollegeManagement;
 
+// Student.PrintHeader();
 
-// Student student3 = new();
-//  student3.name = "Virat";
-// student3.rollNumber = 3;
-// student3.dateofBirth=new DateTime(1999,05,02);
-// student3.resume = "BBA";
-// student3.Gender = 'M';
-// student3.Info();
+// var student = new Student("Sita Bond", 68, new DateTime(1990, 1, 11), 'F');
+// student.Resume = "abcd";
 
-// Method m= new();
+// student.PrintDetails();
+
+// var student3 = new Student("James Bond", 67, new DateTime(1990, 1, 11), 'F');
+// student3.PrintDetails();
+
+// var student4 = new Student("Rakeesh Bond", 798, new DateTime(2000, 1, 11), 'M');
+// student4.PrintDetails();
+
+// Teacher.PrintHeader();
+// var teacher1 = new Teacher("Rakeesh Rana", "MS Computer Science", new DateTime(2000, 1, 11), 'M');
+// teacher1.PrintDetails();
+// var teacher2 = new Teacher("Rakeesh Rana", "MS Computer Science", new DateTime(2000, 1, 11), 'M');
+// teacher2.PrintDetails();
+
+// // Work for admin
+// Admin.PrintHeader();
+// var admin1 = new Admin("Rakeesh Rana", new DateTime(2000, 1, 11), 'M', "IT");
+// admin1.PrintDetails();
+
+// Methods m = new();
 // m.SayHello();
-// m.SayHello("Hi!!");
-// var av =m.GetAverage(23,34,45,44,456,677);
-// var (Sum,Average)=m.GetResult(23,34,45,555);
+// m.SayHello("Hi!!!");
 
-// Generics g= new();
-// g.Print<decimal>(234.3445m);
+// var av = m.GetAverage(23, 45, 67, 34, 456456, 45646, 335);
+// var (Sum, Avarage) = m.GetResult(23, 45, 67, 34, 456456);
+
+// Generics g = new();
+// g.Print<decimal>(234.234234m);
 // g.Print<string>("Hello");
 
-FileAndFolderHandler fd= new();
-fd.CreateFolder("ABC");
+FileAndFolderHandler fd = new();
+//fd.CreateFolder("ABC");
+fd.ReadCsv();

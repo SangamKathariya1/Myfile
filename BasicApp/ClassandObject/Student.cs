@@ -1,3 +1,4 @@
+namespace CollegeManagement;
 class student(string n, int r, DateTime d, char g) : Person(n, d, g)
 {
     public int rollNumber = r;

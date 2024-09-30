@@ -1,9 +1,11 @@
-public class Person(string n, DateTime d, char g)
+namespace CollegeManagement;
+public class Person(string n, DateTime d, char g)   // Primary Constructor
 {
     public string name = n;
     public DateTime dateOfBirth = d;
-    string resume = "";
     public char gender = g;
+
+    public string Resume { get; set; } = string.Empty;
 
     public virtual void PrintDetails()
     {
