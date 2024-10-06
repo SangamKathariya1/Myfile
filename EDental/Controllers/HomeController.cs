@@ -17,11 +17,15 @@ public class HomeController : Controller
     {
         return View();
     }
-
-    public IActionResult Privacy()
+    public IActionResult Services()
     {
         return View();
     }
+
+    // public IActionResult Privacy()
+    // {
+    //     return View();
+    // }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
