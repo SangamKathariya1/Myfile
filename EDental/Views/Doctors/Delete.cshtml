@@ -1,0 +1,13 @@
+@model Doctor
+@{
+    ViewData["Title"] = "Delete Doctor Entry";
+    var genders = Enum.GetValues<Gender>();
+    var genderList = genders.Select(x => new SelectListItem { Text = x.ToString(), Value = ((int)x).ToString() });
+}
+<h3 class="text-danger">Are you sure to delete record for @Model.FullName?</h3>
+<form class="row g-3" asp-action="Delete" method="post">
+    <div class="col-12">
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+        <a href="/doctors" class="btn btn-success"><i class="bi bi-back"></i> Cancel</a>
+    </div>
+</form>

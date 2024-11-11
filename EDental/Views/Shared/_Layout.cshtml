@@ -4,29 +4,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - EDental</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/EDental.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" asp-href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" asp-href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" asp-append-version="true" />
+    <link rel="stylesheet" asp-href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" asp-href="~/EDental.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="/Image/logo.png" alt="" style=" height: 40px;">
+                    <img asp-src="~/images/logo.png" height="40" alt="EDental Logo" />
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li> *@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/doctors"><i class="bi bi-person"></i> Doctors</a></li>
+                                <li><a class="dropdown-item" href="/doctors/add"><i class="bi bi-person-add"></i> New Doctor</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/diagnoses"><i class="bi bi-capsule"></i> Diagnoses</a></li>
+                                <li><a class="dropdown-item" href="/diagnoses/add"><i class="bi bi-prescription"></i> New Diagnosis</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/procurements"><i class="bi bi-person-plus"></i> Procurements</a></li>
+                                <li><a class="dropdown-item" href="/procurements/add"><i class="bi bi-plus"></i> New Procurement</a></li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services"> Our Services</a>
+                            <a class="nav-link text-dark" href="/home/services">Our Services</a>
                         </li>
                     </ul>
                 </div>
@@ -39,14 +52,14 @@
         </main>
     </div>
 
-     <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - EDental 
+            &copy; 2024 - EDental
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script asp-src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script asp-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script asp-src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
