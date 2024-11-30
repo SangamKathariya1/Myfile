@@ -49,7 +49,7 @@ namespace EDental.Api.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int doctor)
         {
-            var result = doctorsRepository.Delete(doctor);
+            int result = doctorsRepository.Delete(doctor);
             return Ok(result);
         }
     }

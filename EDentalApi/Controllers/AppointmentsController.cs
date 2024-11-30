@@ -1,43 +1,104 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using EDental.Data;
+using EDental.Infrastructure.Data.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace EDentalApi.Controllers
+namespace EDental.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AppointmentsController : ControllerBase
     {
-        // GET: api/<AppoinmentsController>
+        private readonly EDentalDbContext _context;
+
+        public AppointmentsController(EDentalDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/Appointments
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments()
         {
-            return new string[] { "value1", "value2" };
+            return await _context.Appointments.ToListAsync();
         }
 
-        // GET api/<AppoinmentsController>/5
+        // GET: api/Appointments/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<Appointment>> GetAppointment(int id)
         {
-            return "value";
+            var appointment = await _context.Appointments.FindAsync(id);
+
+            if (appointment == null)
+            {
+                return NotFound();
+            }
+
+            return appointment;
         }
 
-        // POST api/<AppoinmentsController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<AppoinmentsController>/5
+        // PUT: api/Appointments/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> PutAppointment(int id, Appointment appointment)
         {
+            if (id != appointment.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(appointment).State = (System.Data.Entity.EntityState)EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AppointmentExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
-        // DELETE api/<AppoinmentsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // POST: api/Appointments
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Appointment>> PostAppointment(Appointment appointment)
         {
+            _context.Appointments.Add(appointment);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetAppointment", new { id = appointment.Id }, appointment);
+        }
+
+        // DELETE: api/Appointments/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAppointment(int id)
+        {
+            var appointment = await _context.Appointments.FindAsync(id);
+            if (appointment == null)
+            {
+                return NotFound();
+            }
+
+            _context.Appointments.Remove(appointment);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool AppointmentExists(int id)
+        {
+            return _context.Appointments.Any(e => e.Id == id);
         }
     }
 }

@@ -5,7 +5,7 @@ using EDental.Infrastructure.Repositories.Interfaces;
 
 namespace EDental.Infrastructure.Repositories.Implementations;
 
-public class DoctorsRepository(EDentalDbContext dbContext) : IDoctorsRepository
+public class DoctorsRepository(EDentalDbContext dbContext)
 {
     private readonly EDentalDbContext db = dbContext;
 

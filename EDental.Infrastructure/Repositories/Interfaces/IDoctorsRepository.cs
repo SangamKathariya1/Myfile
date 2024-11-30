@@ -14,6 +14,7 @@ namespace EDental.Infrastructure.Repositories.Interfaces
         public int Insert(Doctor doctor);
         public int Edit(Doctor doctor);
         public int Delete(Doctor doctor);
+        int Delete(int doctor);
         //object Delete(int doctor);
     }
 }

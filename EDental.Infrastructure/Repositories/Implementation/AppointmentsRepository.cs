@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EDental.Infrastructure.Repositories.Implementation
 {
-    public class AppointmentsRepository(EDentalDbContext dbContext): IAppointmentsRepository
+    public class AppointmentsRepository(EDentalDbContext dbContext)
       
     {
         private readonly EDentalDbContext db = dbContext;
